@@ -1,10 +1,9 @@
-import React from "react";
-const App = () => {
+function App() {
   return (
-    <div>
-      <h1> Hello World!</h1>
+    <div className="App">
+      <h2>Shivendra</h2>
     </div>
   );
-};
-// module.exports = App;
+}
+
 export default App;
