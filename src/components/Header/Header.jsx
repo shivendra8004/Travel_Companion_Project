@@ -14,7 +14,7 @@ const Header = ({ onPlaceChanged, onLoad }) => {
         <Typography variant="h5" className={classes.title}>
           Travel Advisor
         </Typography>
-        <Box display="flex">
+        <Box style={{ display: "flex" }}>
           <Typography variant="h6" className={classes.title}>
             Explore new places
           </Typography>
