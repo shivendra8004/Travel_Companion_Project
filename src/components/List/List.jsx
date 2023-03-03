@@ -6,7 +6,20 @@ const List = () => {
   const classes = useStyles();
   const [type, setType] = useState("attractions");
   const [rating, setRating] = useState("0");
-  const places = [{ name: "Cool Place" }, { name: "Pub" }, { name: "Delhi Fort" }, { name: "Jaypee Collage" }];
+  const places = [
+    { name: "Cool Place" },
+    { name: "Pub" },
+    { name: "Delhi Fort" },
+    { name: "Jaypee Collage" },
+    { name: "Cool Place" },
+    { name: "Pub" },
+    { name: "Delhi Fort" },
+    { name: "Jaypee Collage" },
+    { name: "Cool Place" },
+    { name: "Pub" },
+    { name: "Delhi Fort" },
+    { name: "Jaypee Collage" },
+  ];
   return (
     <div className={classes.container}>
       <Typography varient="h4">Restaurants, Hotels & Attractions around you</Typography>
