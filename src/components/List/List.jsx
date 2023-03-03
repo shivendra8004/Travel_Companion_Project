@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { CircularProgress, Grid, Typography, InputLabel, MenuItem, FormControl, Select } from "@material-ui/core";
 import useStyles from "./l_styles";
+
 const List = () => {
   const classes = useStyles();
   const [type, setType] = useState("attractions");
   const [rating, setRating] = useState("0");
-
+  const places = [];
   return (
     <div className={classes.container}>
       <Typography varient="h4">Restaurants, Hotels & Attractions around you</Typography>
