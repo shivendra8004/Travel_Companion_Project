@@ -4,7 +4,7 @@ import useStyles from "./l_styles";
 const List = () => {
   const classes = useStyles();
   const [type, setType] = useState("attractions");
-  const [rating, setRating] = useState("");
+  const [rating, setRating] = useState("0");
 
   return (
     <div className={classes.container}>
