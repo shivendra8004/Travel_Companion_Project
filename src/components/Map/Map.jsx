@@ -7,23 +7,22 @@ import useStyles from "./m_styles";
 const Map = () => {
   const classes = useStyles();
   // const isMobile = useMediaQuery("(min-width:600px)");
-  const coordinates = { lat: 24.4348, lng: 77.1609 };
+  // const coordinates = { lat: 24.4348, lng: 77.1609 };
+  const defaultProps = {
+    center: {
+      lat: 10.99835602,
+      lng: 77.01502627,
+    },
+    zoom: 11,
+  };
   return (
-    <div>
-      <h1>Map</h1>
+    <div className={classes.mapContainer}>
+      <GoogleMapReact
+        bootstrapURLKeys={{ key:  }}
+        defaultCenter={defaultProps.center}
+        // defaultZoom={defaultProps.zoom}
+      ></GoogleMapReact>
     </div>
-    // <div className={classes.mapContainer}>
-    //   <GoogleMapReact
-    //     bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAP_API_KEY }}
-    //     defaultCenter={coordinates}
-    //     center={coordinates}
-    //     // defaultZoom={14}
-    //     margin={[50, 50, 50, 50]}
-    //     // options={""}
-    //     // onChange={""}
-    //     // onChildClick={""}
-    //   ></GoogleMapReact>
-    // </div>
   );
 };
 export default Map;
