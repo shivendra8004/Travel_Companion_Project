@@ -7,11 +7,10 @@ import useStyles from "./m_styles";
 const Map = () => {
   const classes = useStyles();
   const isMobile = useMediaQuery("(min-width:600px)");
-  const coordinates = { lat: 24.4348, lng: 77.1609 };
   const defaultProps = {
     center: {
-      lat: 10.99835602,
-      lng: 77.01502627,
+      lat: 24.4348,
+      lng: 77.1609,
     },
     zoom: 11,
   };
@@ -19,8 +18,12 @@ const Map = () => {
     <div className={classes.mapContainer}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAP_API_KEY }}
-        defaultCenter={{ lat: 24.4348, lng: 77.1609 }}
+        defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
+        margin={[50, 50, 50, 50]}
+        options={""}
+        onChange={""}
+        onChildClick={""}
       ></GoogleMapReact>
     </div>
   );
