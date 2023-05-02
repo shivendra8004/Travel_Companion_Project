@@ -12,10 +12,7 @@ const App = () => {
   // All useStates and constants
   const [places, setPlaces] = useState([]);
   const [coordinates, setCoordinates] = useState({ lat: 24.4362736, lng: 77.1600089 });
-  const [bounds, setBounds] = useState({
-    ne: { lat: 24.457721793241078, lng: 77.19816064102781 },
-    sw: { lat: 24.414821757913927, lng: 77.12185715897215 },
-  });
+  const [bounds, setBounds] = useState({});
 
   // All useEffect functions
 
@@ -27,6 +24,7 @@ const App = () => {
   }, []);
 
   useEffect(() => {
+    console.log(coordinates, bounds);
     getPlacesDetails(bounds.sw, bounds.ne).then((data) => {
       console.log(data);
       setPlaces(data);
