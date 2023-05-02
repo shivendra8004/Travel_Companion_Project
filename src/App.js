@@ -11,7 +11,7 @@ import PlaceDetails from "./components/PlaceDetails/PlaceDetails";
 const App = () => {
   // All useStates and constants
   const [places, setPlaces] = useState([]);
-  const [coordinates, setCoordinates] = useState({});
+  const [coordinates, setCoordinates] = useState({ lat: 24.4362736, lng: 77.1600089 });
   const [bounds, setBounds] = useState({});
 
   // All useEffect functions
@@ -24,7 +24,6 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    console.log(coordinates, bounds);
     getPlacesDetails().then((data) => {
       console.log(data);
       setPlaces(data);
