@@ -11,9 +11,7 @@ import PlaceDetails from "./components/PlaceDetails/PlaceDetails";
 const App = () => {
   // All useStates and constants
   const [places, setPlaces] = useState([]);
-  const [coordinates, setCoordinates] = useState({ lat: 24.4348, lng: 77.1609 });
-
-  // This state is to update the boundaries of map when we drag using mouse in map
+  const [coordinates, setCoordinates] = useState({});
   const [bounds, setBounds] = useState({});
 
   // All useEffect functions
