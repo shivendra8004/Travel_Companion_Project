@@ -5,14 +5,17 @@ import Header from "./components/Header/Header";
 import List from "./components/List/List";
 import Map from "./components/Map/Map";
 import { getPlacesDetails } from "./api";
-import PlaceDetails from "./components/PlaceDetails/PlaceDetails";
+// import PlaceDetails from "./components/PlaceDetails/PlaceDetails";
 
 // All Functions
 const App = () => {
   // All useStates and constants
   const [places, setPlaces] = useState([]);
   const [coordinates, setCoordinates] = useState({ lat: 24.4362736, lng: 77.1600089 });
-  const [bounds, setBounds] = useState({});
+  const [bounds, setBounds] = useState({
+    ne: { lat: 24.457721793241078, lng: 77.19816064102781 },
+    sw: { lat: 24.414821757913927, lng: 77.12185715897215 },
+  });
 
   // All useEffect functions
 
@@ -24,7 +27,7 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    getPlacesDetails().then((data) => {
+    getPlacesDetails(bounds.sw, bounds.ne).then((data) => {
       console.log(data);
       setPlaces(data);
     });
@@ -35,7 +38,7 @@ const App = () => {
       <Header />
       <Grid container spacing={3} style={{ width: "100%" }}>
         <Grid item xs={12} md={4}>
-          <List />
+          <List places={places} />
         </Grid>
         <Grid item xs={12} md={8}>
           <Map setCoordinates={setCoordinates} setBounds={setBounds} coordinates={coordinates} />
