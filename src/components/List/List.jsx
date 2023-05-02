@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Grid, Typography, InputLabel, MenuItem, FormControl, Select } from "@material-ui/core";
-import useStyles from "./l_styles";
+import useStyles from "./styles";
 import PlaceDetails from "../PlaceDetails/PlaceDetails";
 const List = () => {
   const classes = useStyles();

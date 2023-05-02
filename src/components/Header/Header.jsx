@@ -3,7 +3,7 @@ import React from "react";
 import { AppBar, Toolbar, Typography, InputBase, Box } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 
-import useStyles from "./h_styles.js";
+import useStyles from "./styles.js";
 
 const Header = ({ onPlaceChanged, onLoad }) => {
   const classes = useStyles();
