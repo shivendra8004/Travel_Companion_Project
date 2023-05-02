@@ -14,8 +14,12 @@ const options = {
   },
 };
 
-const getPlacesDetails = async () => {
+export const getPlacesDetails = async () => {
   try {
-    const res = await axios.get();
-  } catch (error) {}
+    const { data } = await axios.get(URL, options);
+    const { data: restaurants } = data;
+    return restaurants;
+  } catch (error) {
+    console.log(error);
+  }
 };
