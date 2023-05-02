@@ -17,8 +17,8 @@ const options = {
 export const getPlacesDetails = async () => {
   try {
     const { data } = await axios.get(URL, options);
-    const { data: restaurants } = data;
-    return restaurants;
+    const { data: places } = data;
+    return places;
   } catch (error) {
     console.log(error);
   }
