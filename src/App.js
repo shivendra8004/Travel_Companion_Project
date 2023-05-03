@@ -22,7 +22,7 @@ const App = () => {
       setCoordinates({ lat: latitude, lng: longitude });
     });
   }, []);
-
+  // UseEffect for fetching places data from api
   useEffect(() => {
     console.log(coordinates, bounds);
     getPlacesDetails(bounds.sw, bounds.ne).then((data) => {
