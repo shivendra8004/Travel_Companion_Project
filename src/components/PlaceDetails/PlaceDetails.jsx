@@ -9,6 +9,7 @@ const PlaceDetails = ({ place }) => {
     const classes = useStyles();
     const name = place.name;
     return (
+        // {name}
         <Card elevation={6}>
             <CardMedia
                 style={{ height: 350 }}
@@ -25,6 +26,17 @@ const PlaceDetails = ({ place }) => {
 
                         <Typography gutterBottom variant="subtitle1">
                             {place.price_level}
+                        </Typography>
+                    </Box>
+                ) : (
+                    ""
+                )}
+                {place.ranking ? (
+                    <Box display="flex" justifyContent="space-between">
+                        <Typography variant="subtitle1">Ranking</Typography>
+
+                        <Typography gutterBottom variant="subtitle1">
+                            {place.ranking}
                         </Typography>
                     </Box>
                 ) : (
