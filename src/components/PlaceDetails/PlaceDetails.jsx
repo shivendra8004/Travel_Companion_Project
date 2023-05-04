@@ -18,17 +18,29 @@ const PlaceDetails = ({ place }) => {
                 <Typography gutterBottom varient="h5">
                     {place.name}
                 </Typography>
-                {place.price_level ? (
-                    <Box display="flex" justifyContent="space-between">
-                        <Typography variant="subtitle1">Price</Typography>
 
+                <Box display="flex" justifyContent="space-between">
+                    <Typography variant="subtitle1">Price</Typography>
+
+                    <Typography gutterBottom variant="subtitle1">
+                        {place.price_level ? place.price_level : "NA"}
+                    </Typography>
+                </Box>
+
+                <Box display="flex" justifyContent="space-between">
+                    <Typography variant="subtitle1">Ranking</Typography>
+
+                    <Typography gutterBottom variant="subtitle1">
                         <Typography gutterBottom variant="subtitle1">
-                            {place.price_level}
+                            {place.ranking ? place.ranking : "NA"}
                         </Typography>
-                    </Box>
-                ) : (
-                    ""
-                )}
+                    </Typography>
+                    {place?.awards?.map((award) => (
+                        <Box display="flex" justifyContent="space-between" alignItems="center">
+                            <img src={award.images.small} alt={award.display_name} />
+                        </Box>
+                    ))}
+                </Box>
             </CardContent>
         </Card>
     );

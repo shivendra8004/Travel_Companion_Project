@@ -11,7 +11,7 @@ import { getPlacesDetails } from "./api";
 const App = () => {
     // All useStates and constants
     const [places, setPlaces] = useState([]);
-    const [coordinates, setCoordinates] = useState({ lat: 24.6324, lng: 77.3002 });
+    const [coordinates, setCoordinates] = useState({ lat: 26.2124, lng: 78.1772 });
     const [bounds, setBounds] = useState({});
 
     // useEffect to set the current position as default position of user
