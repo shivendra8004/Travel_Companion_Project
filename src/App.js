@@ -11,7 +11,7 @@ import { getPlacesDetails } from "./api";
 const App = () => {
   // All useStates and constants
   const [places, setPlaces] = useState([]);
-  const [coordinates, setCoordinates] = useState({ lat: 24.4362736, lng: 77.1600089 });
+  const [coordinates, setCoordinates] = useState({ lat: 24.6324, lng: 77.3002 });
   const [bounds, setBounds] = useState({});
 
   // All useEffect functions
