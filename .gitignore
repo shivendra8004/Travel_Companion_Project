@@ -13,7 +13,8 @@ key.txt/
 
 # production
 /build
-
+/src
+src/
 # misc
 .DS_Store
 .env.local
