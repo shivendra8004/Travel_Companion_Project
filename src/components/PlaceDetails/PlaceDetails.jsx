@@ -21,9 +21,8 @@ const PlaceDetails = ({ place }) => {
 
                 <Box display="flex" justifyContent="space-between">
                     <Typography variant="subtitle1">Price</Typography>
-
                     <Typography gutterBottom variant="subtitle1">
-                        {place.price_level ? place.price_level : "NA"}
+                        {place.price_level ? place.price_level : <span>NA</span>}
                     </Typography>
                 </Box>
 
@@ -59,6 +58,11 @@ const PlaceDetails = ({ place }) => {
                         {place.phone}
                     </Typography>
                 )}
+                <CardActions>
+                    <Button size="small" color="primary" onClick={() => window.open(place.web_url, "_blanK")}>
+                        More Details
+                    </Button>
+                </CardActions>
             </CardContent>
         </Card>
     );
