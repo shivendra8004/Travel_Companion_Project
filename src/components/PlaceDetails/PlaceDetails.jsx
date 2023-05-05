@@ -58,10 +58,15 @@ const PlaceDetails = ({ place }) => {
                         {place.phone}
                     </Typography>
                 )}
-                <CardActions>
-                    <Button size="small" color="primary" onClick={() => window.open(place.web_url, "_blanK")}>
+                <CardActions className={classes.spacing}>
+                    <Button size="small" variant="contained" color="primary" onClick={() => window.open(place.web_url, "_blanK")}>
                         More Details
                     </Button>
+                    {place?.website && (
+                        <Button size="small" variant="contained" color="primary" onClick={() => window.open(place.website, "_blanK")}>
+                            Website
+                        </Button>
+                    )}
                 </CardActions>
             </CardContent>
         </Card>
