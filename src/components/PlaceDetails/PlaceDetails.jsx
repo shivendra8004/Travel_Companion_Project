@@ -48,9 +48,15 @@ const PlaceDetails = ({ place }) => {
                     <Chip key={name} size="small" label={name} className={classes.chip} />
                 ))}
                 {place?.address && (
-                    <Typography gutterBottom varient="body2" color="testSecondary" className={classes.subtitle}>
+                    <Typography gutterBottom varient="subtitle1" color="testSecondary" className={classes.spacing}>
                         <LocationOn />
                         {place.address}
+                    </Typography>
+                )}
+                {place?.phone && (
+                    <Typography gutterBottom varient="body2" color="testSecondary" className={classes.spacing}>
+                        <Phone />
+                        {place.phone}
                     </Typography>
                 )}
             </CardContent>
