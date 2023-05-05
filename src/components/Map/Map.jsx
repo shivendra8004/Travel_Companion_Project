@@ -28,18 +28,19 @@ const Map = ({ setCoordinates, setBounds, coordinates, places }) => {
             >
                 {places?.map((place, i) => (
                     <div className={classes.markerContainer} lat={Number(place.latitude)} lng={Number(place.longitude)} key={i}>
-                        {isDesktop ? (
+                        {!isDesktop ? (
                             <LocationOnOutlinedIcon fontSize="large" />
                         ) : (
-                            <Paper elevation={3} className={classes.paper}>
-                                <Typography className={classes.typography} variant="subtitle2 " gutterBottom>
+                            <Paper elevation={5} className={classes.paper}>
+                                <Typography className={classes.typography} variant="subtitle3 " gutterBottom>
                                     {place.name}
                                     <img
                                         src={
                                             place.photo
-                                                ? place.photo.images.large.url
+                                                ? place.photo.images.small.url
                                                 : "https://blog.dineout-cdn.co.in/blog/wp-content/uploads/2019/10/Blog-10-1030x538.jpg"
                                         }
+                                        style={{ width: "80px" }}
                                         alt={place.name}
                                         className={classes.pointer}
                                     />
