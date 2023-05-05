@@ -9,7 +9,7 @@ import useStyles from "./styles";
 // All Functions will be declared here
 const Map = ({ setCoordinates, setBounds, coordinates, places }) => {
     const classes = useStyles();
-    const isMobile = useMediaQuery("(min-width:600px)");
+    const isDesktop = useMediaQuery("(min-width:600px)");
 
     return (
         <div className={classes.mapContainer}>
@@ -28,12 +28,21 @@ const Map = ({ setCoordinates, setBounds, coordinates, places }) => {
             >
                 {places?.map((place, i) => (
                     <div className={classes.markerContainer} lat={Number(place.latitude)} lng={Number(place.longitude)} key={i}>
-                        {isMobile ? (
-                            <LocationOnOutlinedIcon color="primary" fontSize="large" />
+                        {isDesktop ? (
+                            <LocationOnOutlinedIcon fontSize="large" />
                         ) : (
                             <Paper elevation={3} className={classes.paper}>
                                 <Typography className={classes.typography} variant="subtitle2 " gutterBottom>
                                     {place.name}
+                                    <img
+                                        src={
+                                            place.photo
+                                                ? place.photo.images.large.url
+                                                : "https://blog.dineout-cdn.co.in/blog/wp-content/uploads/2019/10/Blog-10-1030x538.jpg"
+                                        }
+                                        alt={place.name}
+                                        className={classes.pointer}
+                                    />
                                 </Typography>
                             </Paper>
                         )}
