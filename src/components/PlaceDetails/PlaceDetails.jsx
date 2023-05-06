@@ -25,6 +25,12 @@ const PlaceDetails = ({ place }) => {
                         {place.price_level ? place.price_level : <span>NA</span>}
                     </Typography>
                 </Box>
+                <Box display="flex" justifyContent="space-between">
+                    <Typography variant="subtitle1">Ratings</Typography>
+                    <Typography gutterBottom variant="subtitle1">
+                        {place.rating ? <Rating size="small" value={Number(place.rating)} /> : <span>NA</span>}
+                    </Typography>
+                </Box>
 
                 <Box display="flex" justifyContent="space-between">
                     <Typography variant="subtitle1">Ranking</Typography>
