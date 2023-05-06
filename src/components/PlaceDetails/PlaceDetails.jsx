@@ -28,7 +28,7 @@ const PlaceDetails = ({ place }) => {
                 <Box display="flex" justifyContent="space-between">
                     <Typography variant="subtitle1">Ratings</Typography>
                     <Typography gutterBottom variant="subtitle1">
-                        {place.rating ? <Rating size="small" value={Number(place.rating)} /> : <span>NA</span>}
+                        {place.rating ? <Rating value={Number(place.rating)} readOnly /> : <span>NA</span>}
                     </Typography>
                 </Box>
 
