@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { Grid, Typography, InputLabel, MenuItem, FormControl, Select } from "@material-ui/core";
 import useStyles from "./styles";
 import PlaceDetails from "../PlaceDetails/PlaceDetails";
-const List = ({ places }) => {
+const List = ({ places, childClick }) => {
     const classes = useStyles();
     const [type, setType] = useState("attractions");
     const [rating, setRating] = useState("0");
+    console.log({ childClick });
     return (
         <div className={classes.container}>
             <Typography varient="h4">Restaurants, Hotels & Attractions around you</Typography>

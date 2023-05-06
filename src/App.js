@@ -13,6 +13,7 @@ const App = () => {
     const [places, setPlaces] = useState([]);
     const [coordinates, setCoordinates] = useState({ lat: 26.2124, lng: 78.1772 });
     const [bounds, setBounds] = useState({});
+    const [childClick, setChildClick] = useState(null);
 
     // useEffect to set the current position as default position of user
     useEffect(() => {
@@ -35,10 +36,10 @@ const App = () => {
             <Header />
             <Grid container spacing={3} style={{ width: "100%" }}>
                 <Grid item xs={12} md={4}>
-                    <List places={places} />
+                    <List places={places} childClick={childClick} />
                 </Grid>
                 <Grid item xs={12} md={8}>
-                    <Map setCoordinates={setCoordinates} setBounds={setBounds} coordinates={coordinates} places={places} />
+                    <Map setCoordinates={setCoordinates} setBounds={setBounds} coordinates={coordinates} places={places} setChildClick={setChildClick} />
                 </Grid>
             </Grid>
         </>
