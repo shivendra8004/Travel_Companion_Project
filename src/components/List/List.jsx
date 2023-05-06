@@ -11,9 +11,9 @@ const List = ({ places, childClick, loading }) => {
     useEffect(() => {
         const refs = Array(places?.length)
             .fill()
-            .map((_, i) => elementRefs[i] || createRef());
+            .map((_, i) => refs[i] || createRef());
         setElementRefs(refs);
-    }, [places, elementRefs]);
+    }, [places]);
 
     return (
         <div className={classes.container}>
