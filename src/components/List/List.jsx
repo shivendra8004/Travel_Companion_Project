@@ -1,12 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, createRef } from "react";
 import { Grid, Typography, InputLabel, MenuItem, FormControl, Select } from "@material-ui/core";
 import useStyles from "./styles";
 import PlaceDetails from "../PlaceDetails/PlaceDetails";
 const List = ({ places, childClick }) => {
     const classes = useStyles();
     const [type, setType] = useState("attractions");
-    const [rating, setRating] = useState("0");
-    console.log({ childClick });
+    const [rating, setRating] = useState("");
+    const [elementRefs, setElementRefs] = useState([]);
+
+    useEffect(() => {
+        const refs = Array(places.length)
+            .fill()
+            .map((_, i) => elementRefs[i] || createRef());
+        setElementRefs(refs);
+    }, [places]);
+
     return (
         <div className={classes.container}>
             <Typography varient="h4">Restaurants, Hotels & Attractions around you</Typography>
@@ -41,8 +49,8 @@ const List = ({ places, childClick }) => {
             </FormControl>
             <Grid container spacing={3} className={classes.list}>
                 {places?.map((place, i) => (
-                    <Grid item key={i} xs={12} md={12}>
-                        {place.name ? <PlaceDetails place={place} /> : ""}
+                    <Grid refs={elementRefs[i]} item key={i} xs={12} md={12}>
+                        {place.name ? <PlaceDetails selected={Number(childClick === i)} place={place} /> : ""}
                     </Grid>
                 ))}
             </Grid>
