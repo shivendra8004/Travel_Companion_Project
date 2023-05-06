@@ -1,8 +1,8 @@
 import React, { useState, useEffect, createRef } from "react";
-import { Grid, Typography, InputLabel, MenuItem, FormControl, Select } from "@material-ui/core";
+import { Grid, Typography, InputLabel, MenuItem, FormControl, Select, CircularProgress } from "@material-ui/core";
 import useStyles from "./styles";
 import PlaceDetails from "../PlaceDetails/PlaceDetails";
-const List = ({ places, childClick }) => {
+const List = ({ places, childClick, loading }) => {
     const classes = useStyles();
     const [type, setType] = useState("attractions");
     const [rating, setRating] = useState("");
@@ -18,6 +18,13 @@ const List = ({ places, childClick }) => {
     return (
         <div className={classes.container}>
             <Typography varient="h4">Restaurants, Hotels & Attractions around you</Typography>
+            {loading ? (
+                <div className={classes.loading}>
+                    <CircularProgress size="5rem" />
+                </div>
+            ) : (
+                ""
+            )}
             {/* Form Control for select places */}
             <FormControl className={classes.formControl}>
                 <InputLabel>Type</InputLabel>
