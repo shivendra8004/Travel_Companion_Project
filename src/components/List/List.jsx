@@ -49,8 +49,8 @@ const List = ({ places, childClick }) => {
             </FormControl>
             <Grid container spacing={3} className={classes.list}>
                 {places?.map((place, i) => (
-                    <Grid refs={elementRefs[i]} item key={i} xs={12} md={12}>
-                        {place.name ? <PlaceDetails selected={Number(childClick === i)} place={place} /> : ""}
+                    <Grid item key={i} xs={12} md={12}>
+                        {place.name ? <PlaceDetails selected={Number(childClick === i)} refProp={elementRefs[i]} place={place} /> : ""}
                     </Grid>
                 ))}
             </Grid>
