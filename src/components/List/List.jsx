@@ -2,7 +2,7 @@ import React, { useState, useEffect, createRef } from "react";
 import { Grid, Typography, InputLabel, MenuItem, FormControl, Select, CircularProgress } from "@material-ui/core";
 import useStyles from "./styles";
 import PlaceDetails from "../PlaceDetails/PlaceDetails";
-const List = ({ places, childClick, loading }) => {
+const List = ({ places, childClick, isLoading }) => {
     const classes = useStyles();
     const [type, setType] = useState("attractions");
     const [rating, setRating] = useState("");
@@ -11,14 +11,14 @@ const List = ({ places, childClick, loading }) => {
     useEffect(() => {
         const refs = Array(places?.length)
             .fill()
-            .map((_, i) => refs[i] || createRef());
+            .map((_, i) => elementRefs[i] || createRef());
         setElementRefs(refs);
-    }, [places]);
+    }, [places, elementRefs]);
 
     return (
         <div className={classes.container}>
             <Typography varient="h4">Restaurants, Hotels & Attractions around you</Typography>
-            {loading ? (
+            {isLoading ? (
                 <div className={classes.loading}>
                     <CircularProgress size="5rem" />
                 </div>

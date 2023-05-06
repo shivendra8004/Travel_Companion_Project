@@ -13,7 +13,7 @@ const App = () => {
     const [coordinates, setCoordinates] = useState({ lat: 26.2124, lng: 78.1772 });
     const [bounds, setBounds] = useState({});
     const [childClick, setChildClick] = useState(null);
-    const [loading, setLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     // useEffect to set the current position as default position of user
     useEffect(() => {
@@ -24,10 +24,10 @@ const App = () => {
 
     // UseEffect for fetching places data from api
     useEffect(() => {
-        setLoading(true);
+        setIsLoading(true);
         getPlacesDetails(bounds.sw, bounds.ne).then((data) => {
             setPlaces(data);
-            setLoading(false);
+            setIsLoading(false);
         });
     }, [coordinates, bounds]);
     return (
@@ -36,17 +36,10 @@ const App = () => {
             <Header />
             <Grid container spacing={3} style={{ width: "100%" }}>
                 <Grid item xs={12} md={4}>
-                    <List places={places} childClick={childClick} Loading={loading} />
+                    <List places={places} childClick={childClick} isLoading={isLoading} />
                 </Grid>
                 <Grid item xs={12} md={8}>
-                    <Map
-                        setCoordinates={setCoordinates}
-                        setBounds={setBounds}
-                        coordinates={coordinates}
-                        places={places}
-                        setChildClick={setChildClick}
-                        setLoading={setLoading}
-                    />
+                    <Map setCoordinates={setCoordinates} setBounds={setBounds} coordinates={coordinates} places={places} setChildClick={setChildClick} />
                 </Grid>
             </Grid>
         </>
