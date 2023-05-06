@@ -44,8 +44,8 @@ const Map = ({ setCoordinates, setBounds, coordinates, places }) => {
                                         alt={place.name}
                                         className={classes.pointer}
                                     />
-                                    <Rating size="small" value={Number(place.rating)} readOnly />
                                 </Typography>
+                                <Rating size="small" value={Number(place.rating)} readOnly />
                             </Paper>
                         )}
                     </div>
