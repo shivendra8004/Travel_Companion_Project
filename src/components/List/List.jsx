@@ -9,11 +9,11 @@ const List = ({ places, childClick, loading }) => {
     const [elementRefs, setElementRefs] = useState([]);
 
     useEffect(() => {
-        const refs = Array(places.length)
+        const refs = Array(places?.length)
             .fill()
             .map((_, i) => elementRefs[i] || createRef());
         setElementRefs(refs);
-    }, [places]);
+    }, [places, elementRefs]);
 
     return (
         <div className={classes.container}>
