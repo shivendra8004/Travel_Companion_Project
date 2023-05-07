@@ -14,8 +14,10 @@ const App = () => {
     const [bounds, setBounds] = useState({});
     const [childClick, setChildClick] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
-    const [type, setType] = useState("hotels");
-    const [rating, setRating] = useState("");
+    const [type, setType] = useState("attractions");
+    const [rating, setRating] = useState("0");
+    const [filteredPlaces, setFilteredPlaces] = useState([]);
+
     // useEffect to set the current position as default position of user
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(({ coords: { latitude, longitude } }) => {
@@ -28,19 +30,40 @@ const App = () => {
         setIsLoading(true);
         getPlacesDetails(type, bounds.sw, bounds.ne).then((data) => {
             setPlaces(data);
+            setFilteredPlaces([]);
             setIsLoading(false);
         });
     }, [coordinates, bounds, type]);
+
+    // useEffect for Rating filter
+    useEffect(() => {
+        const filteredPlaces = places.filter((place) => place.rating > rating);
+        setFilteredPlaces(filteredPlaces);
+    }, [rating]);
     return (
         <>
             <CssBaseline />
             <Header />
             <Grid container spacing={3} style={{ width: "100%" }}>
                 <Grid item xs={12} md={4}>
-                    <List places={places} childClick={childClick} isLoading={isLoading} setType={setType} type={type} setRating={setRating} rating={rating} />
+                    <List
+                        places={filteredPlaces.length ? filteredPlaces : places}
+                        childClick={childClick}
+                        isLoading={isLoading}
+                        setType={setType}
+                        type={type}
+                        setRating={setRating}
+                        rating={rating}
+                    />
                 </Grid>
                 <Grid item xs={12} md={8}>
-                    <Map setCoordinates={setCoordinates} setBounds={setBounds} coordinates={coordinates} places={places} setChildClick={setChildClick} />
+                    <Map
+                        setCoordinates={setCoordinates}
+                        setBounds={setBounds}
+                        coordinates={coordinates}
+                        places={filteredPlaces.length ? filteredPlaces : places}
+                        setChildClick={setChildClick}
+                    />
                 </Grid>
             </Grid>
         </>
