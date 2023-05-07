@@ -2,11 +2,9 @@ import React, { useState, useEffect, createRef } from "react";
 import { Grid, Typography, InputLabel, MenuItem, FormControl, Select, CircularProgress } from "@material-ui/core";
 import useStyles from "./styles";
 import PlaceDetails from "../PlaceDetails/PlaceDetails";
-const List = ({ places, childClick, isLoading }) => {
+const List = ({ places, childClick, isLoading, type, setType, rating, setRating }) => {
     const classes = useStyles();
 
-    const [type, setType] = useState("restaurants");
-    const [rating, setRating] = useState("");
     const [elementRefs, setElementRefs] = useState([]);
 
     useEffect(() => {

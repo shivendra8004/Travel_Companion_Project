@@ -14,6 +14,8 @@ const App = () => {
     const [bounds, setBounds] = useState({});
     const [childClick, setChildClick] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
+    const [type, setType] = useState("restaurants");
+    const [rating, setRating] = useState("");
     // useEffect to set the current position as default position of user
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(({ coords: { latitude, longitude } }) => {
@@ -35,7 +37,7 @@ const App = () => {
             <Header />
             <Grid container spacing={3} style={{ width: "100%" }}>
                 <Grid item xs={12} md={4}>
-                    <List places={places} childClick={childClick} isLoading={isLoading} />
+                    <List places={places} childClick={childClick} isLoading={isLoading} setType={setType} type={type} setRating={setRating} rating={rating} />
                 </Grid>
                 <Grid item xs={12} md={8}>
                     <Map setCoordinates={setCoordinates} setBounds={setBounds} coordinates={coordinates} places={places} setChildClick={setChildClick} />
