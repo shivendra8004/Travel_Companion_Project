@@ -17,7 +17,7 @@ export const getPlacesDetails = async (type, sw, ne) => {
         });
         return data;
     } catch (error) {
-        console.log(error);
+        console.log(error, "From Places API");
     }
 };
 export const getWeatherData = async (lat, lon) => {
@@ -30,6 +30,6 @@ export const getWeatherData = async (lat, lon) => {
         });
         return data;
     } catch (error) {
-        console.log(error);
+        console.log(error, "From Weather API");
     }
 };
