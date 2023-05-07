@@ -12,7 +12,7 @@ const List = ({ places, childClick, isLoading, type, setType, rating, setRating 
             .fill()
             .map((_, i) => elementRefs[i] || createRef());
         setElementRefs(refs);
-    }, [places, elementRefs]);
+    }, [places]);
 
     return (
         <div className={classes.container}>

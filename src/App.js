@@ -14,7 +14,7 @@ const App = () => {
     const [bounds, setBounds] = useState({});
     const [childClick, setChildClick] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
-    const [type, setType] = useState("restaurants");
+    const [type, setType] = useState("hotels");
     const [rating, setRating] = useState("");
     // useEffect to set the current position as default position of user
     useEffect(() => {

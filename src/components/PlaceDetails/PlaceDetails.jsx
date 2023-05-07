@@ -14,7 +14,7 @@ const PlaceDetails = ({ place, selected, refProp }) => {
         <Card elevation={6}>
             <CardMedia
                 style={{ height: 350 }}
-                image={place.photo ? place.photo.images.large.url : "https://blog.dineout-cdn.co.in/blog/wp-content/uploads/2019/10/Blog-10-1030x538.jpg"}
+                image={place.photo ? place.photo.images.large.url : "https://t4.ftcdn.net/jpg/04/00/24/31/360_F_400243185_BOxON3h9avMUX10RsDkt3pJ8iQx72kS3.jpg"}
                 title={place.name}
             />
             <CardContent>

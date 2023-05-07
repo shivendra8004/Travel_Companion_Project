@@ -39,7 +39,7 @@ const Map = ({ setCoordinates, setBounds, coordinates, places, setChildClick }) 
                                         src={
                                             place.photo
                                                 ? place.photo.images.small.url
-                                                : "https://blog.dineout-cdn.co.in/blog/wp-content/uploads/2019/10/Blog-10-1030x538.jpg"
+                                                : "https://t4.ftcdn.net/jpg/04/00/24/31/360_F_400243185_BOxON3h9avMUX10RsDkt3pJ8iQx72kS3.jpg"
                                         }
                                         style={{ width: "80px" }}
                                         alt={place.name}
