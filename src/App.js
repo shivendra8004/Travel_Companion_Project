@@ -38,7 +38,9 @@ const App = () => {
     useEffect(() => {
         if (bounds) {
             setIsLoading(true);
-            getWeatherData(coordinates.lat, coordinates.lng).then(() => {});
+            getWeatherData(coordinates.lat, coordinates.lng).then((data) => {
+                setWeatherData(data);
+            });
 
             getPlacesDetails(type, bounds.sw, bounds.ne).then((data) => {
                 setPlaces(data?.filter((place) => place.name && place.num_reviews > 0));
@@ -77,6 +79,7 @@ const App = () => {
                         coordinates={coordinates}
                         places={filteredPlaces.length ? filteredPlaces : places}
                         setChildClick={setChildClick}
+                        weatherData={weatherData}
                     />
                 </Grid>
             </Grid>
