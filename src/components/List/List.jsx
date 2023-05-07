@@ -4,7 +4,8 @@ import useStyles from "./styles";
 import PlaceDetails from "../PlaceDetails/PlaceDetails";
 const List = ({ places, childClick, isLoading }) => {
     const classes = useStyles();
-    const [type, setType] = useState("attractions");
+
+    const [type, setType] = useState("restaurants");
     const [rating, setRating] = useState("");
     const [elementRefs, setElementRefs] = useState([]);
 
@@ -13,7 +14,7 @@ const List = ({ places, childClick, isLoading }) => {
             .fill()
             .map((_, i) => elementRefs[i] || createRef());
         setElementRefs(refs);
-    }, [places, elementRefs]);
+    }, [places]);
 
     return (
         <div className={classes.container}>

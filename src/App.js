@@ -14,7 +14,6 @@ const App = () => {
     const [bounds, setBounds] = useState({});
     const [childClick, setChildClick] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
-
     // useEffect to set the current position as default position of user
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(({ coords: { latitude, longitude } }) => {
