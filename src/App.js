@@ -27,7 +27,7 @@ const App = () => {
 
     // UseEffect for fetching places data from api
     useEffect(() => {
-        if (bounds) {
+        if (bounds.sw && bounds.ne) {
             setIsLoading(true);
             getPlacesDetails(type, bounds.sw, bounds.ne).then((data) => {
                 setPlaces(data?.filter((place) => place.name && place.num_reviews > 0));
@@ -35,7 +35,7 @@ const App = () => {
                 setIsLoading(false);
             });
         }
-    }, [coordinates, bounds, type]);
+    }, [bounds, type]);
 
     // useEffect for Rating filter
     useEffect(() => {
