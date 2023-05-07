@@ -27,12 +27,14 @@ const App = () => {
 
     // UseEffect for fetching places data from api
     useEffect(() => {
-        setIsLoading(true);
-        getPlacesDetails(type, bounds.sw, bounds.ne).then((data) => {
-            setPlaces(data.filter((place) => place.name && place.num_reviews > 0));
-            setFilteredPlaces([]);
-            setIsLoading(false);
-        });
+        if (bounds) {
+            setIsLoading(true);
+            getPlacesDetails(type, bounds.sw, bounds.ne).then((data) => {
+                setPlaces(data?.filter((place) => place.name && place.num_reviews > 0));
+                setFilteredPlaces([]);
+                setIsLoading(false);
+            });
+        }
     }, [coordinates, bounds, type]);
 
     // useEffect for Rating filter
