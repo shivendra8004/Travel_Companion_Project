@@ -20,3 +20,16 @@ export const getPlacesDetails = async (type, sw, ne) => {
         console.log(error);
     }
 };
+export const getWeatherData = async (lat, lon) => {
+    try {
+        const { data } = await axios.get(`https://open-weather13.p.rapidapi.com/city/latlon/${lat}/${lon}`, {
+            headers: {
+                "X-RapidAPI-Key": "97deaa588fmsh3902de034442ba0p120a22jsn63d56ab47423",
+                "X-RapidAPI-Host": "open-weather13.p.rapidapi.com",
+            },
+        });
+        return data;
+    } catch (error) {
+        console.log(error);
+    }
+};

@@ -3,13 +3,15 @@ import { CssBaseline, Grid } from "@material-ui/core";
 import Header from "./components/Header/Header";
 import List from "./components/List/List";
 import Map from "./components/Map/Map";
-import { getPlacesDetails } from "./api";
+import { getPlacesDetails, getWeatherData } from "./api";
 
 const App = () => {
     const [coordinates, setCoordinates] = useState({ lat: 26.2124, lng: 78.1772 });
     const [bounds, setBounds] = useState({});
 
     const [places, setPlaces] = useState([]);
+    const [weatherData, setWeatherData] = useState([]);
+
     const [childClick, setChildClick] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -36,6 +38,8 @@ const App = () => {
     useEffect(() => {
         if (bounds) {
             setIsLoading(true);
+            getWeatherData(coordinates.lat, coordinates.lng).then(() => {});
+
             getPlacesDetails(type, bounds.sw, bounds.ne).then((data) => {
                 setPlaces(data?.filter((place) => place.name && place.num_reviews > 0));
                 setFilteredPlaces([]);
