@@ -5,7 +5,7 @@ import { Paper, Typography, useMediaQuery } from "@material-ui/core";
 import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
 import { Rating } from "@material-ui/lab";
 import useStyles from "./styles";
-
+import mapStyles from "./mapStyles";
 // All Functions will be declared here
 const Map = ({ setCoordinates, setBounds, coordinates, places, setChildClick, weatherData }) => {
     const classes = useStyles();
