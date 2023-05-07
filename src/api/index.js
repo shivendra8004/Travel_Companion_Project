@@ -24,7 +24,7 @@ export const getWeatherData = async (lat, lon) => {
     try {
         const { data } = await axios.get(`https://open-weather13.p.rapidapi.com/city/latlon/${lat}/${lon}`, {
             headers: {
-                "X-RapidAPI-Key": "97deaa588fmsh3902de034442ba0p120a22jsn63d56ab47423",
+                "X-RapidAPI-Key": process.env.REACT_APP_TRAVEL_ADVISOR_API_KEY,
                 "X-RapidAPI-Host": "open-weather13.p.rapidapi.com",
             },
         });
