@@ -26,11 +26,11 @@ const App = () => {
     // UseEffect for fetching places data from api
     useEffect(() => {
         setIsLoading(true);
-        getPlacesDetails(bounds.sw, bounds.ne).then((data) => {
+        getPlacesDetails(type, bounds.sw, bounds.ne).then((data) => {
             setPlaces(data);
             setIsLoading(false);
         });
-    }, [coordinates, bounds]);
+    }, [coordinates, bounds, type]);
     return (
         <>
             <CssBaseline />
