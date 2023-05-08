@@ -1,70 +1,11 @@
-# Getting Started with Create React App
+About Project
+We simultaneously implement and learn about React.js, Material UI and using API’s. The project uses 3 API’s to show the nearby hotels, restaurants and attractions. The application launches with the geolocation of the user (provided, location access is granted to the Browser.) There are filters, such as Ratings [All, 2.0+, 3.0+, 4.0+] and Type of search parameter [Hotels, Restaurants and Attractions] to refine and present the results accordingly. User can also pinch and zoom the Map and results will be populated as defined by the filter criteria set. User can view the details of the restaurants and hotels on the DetailCard present on the page, and a link is provided too such that the TripAdvisor page of the restaurant or hotel can be visited. Lastly, there is a search field on the Navigation bar, which allows the user to search for places on the entire Earth. This is using the Places API to fetch the various places on Earth.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The code in the repository, if being used, needs to be modified such that Weather API keys are added in the index.js file under api folder, and the Google Maps API keys are added under the index.html file under public folder. Also, Travel Advisor API keys will be required.
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Resources that I used:
+API Service by https://openweathermap.org/ to fetch Weather Data, I was able to fetch the weather data, but was unable to populate the weather icons on the webpage.
+API Service by RapidAPI – Travel Advisor API https://rapidapi.com/apidojo/api/travel-advisor/
+API Service by Google Maps https://console.cloud.google.com/
+Maps JavaScript API
+Places API
