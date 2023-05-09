@@ -15,7 +15,7 @@ const App = () => {
     const [childClick, setChildClick] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
 
-    const [type, setType] = useState("attractions");
+    const [type, setType] = useState("restaurants");
     const [rating, setRating] = useState("");
     const [filteredPlaces, setFilteredPlaces] = useState([]);
 

@@ -6,6 +6,6 @@ The code in the repository, if being used, needs to be modified such that Weathe
 Resources that I used:
 API Service by https://openweathermap.org/ to fetch Weather Data, I was able to fetch the weather data, but was unable to populate the weather icons on the webpage.
 API Service by RapidAPI – Travel Advisor API https://rapidapi.com/apidojo/api/travel-advisor/
-API Service by Google Maps https://console.cloud.google.com/
-Maps JavaScript API
+API Service by Google Maps JavaScript API https://console.cloud.google.com/
+
 Places API
