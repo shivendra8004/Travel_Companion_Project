@@ -20,7 +20,7 @@ const List = ({ places, childClick, isLoading, type, setType, rating, setRating 
     return (
         <div className={classes.container}>
             {/* Title for the list */}
-            <Typography variant="h4">Restaurants, Hotels & Attractions around you</Typography>
+            <Typography variant="h5">Restaurants, Hotels & Attractions around you</Typography>
 
             {/* Conditional rendering based on isLoading */}
             {isLoading ? (
