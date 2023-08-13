@@ -1,4 +1,4 @@
-// All import statements will be added here
+// Import statements for required libraries and components
 import React from "react";
 import GoogleMapReact from "google-map-react";
 import { Paper, Typography, useMediaQuery } from "@material-ui/core";
@@ -6,12 +6,17 @@ import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
 import { Rating } from "@material-ui/lab";
 import useStyles from "./styles";
 import mapStyles from "./mapStyles";
-// All Functions will be declared here
+
+// Map component declaration
 const Map = ({ setCoordinates, setBounds, coordinates, places, setChildClick, weatherData }) => {
+    // Using custom styles from useStyles
     const classes = useStyles();
+    // Checking if the screen size is desktop
     const isDesktop = useMediaQuery("(min-width:600px)");
+
     return (
         <div className={classes.mapContainer}>
+            {/* Google Map component */}
             <GoogleMapReact
                 bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAP_API_KEY }}
                 defaultCenter={coordinates}
@@ -26,14 +31,18 @@ const Map = ({ setCoordinates, setBounds, coordinates, places, setChildClick, we
                     setChildClick(child);
                 }}
             >
+                {/* Mapping through places data */}
                 {places?.map((place, i) => (
                     <div className={classes.markerContainer} lat={Number(place.latitude)} lng={Number(place.longitude)} key={i}>
                         {!isDesktop ? (
+                            // For mobile view, show simple location icon
                             <LocationOnOutlinedIcon fontSize="large" />
                         ) : (
+                            // For desktop view, show details in a Paper component
                             <Paper elevation={5} className={classes.paper}>
                                 <Typography className={classes.typography} variant="subtitle3 " gutterBottom>
                                     {place.name}
+                                    {/* Display place photo */}
                                     <img
                                         src={
                                             place.photo
@@ -45,13 +54,16 @@ const Map = ({ setCoordinates, setBounds, coordinates, places, setChildClick, we
                                         className={classes.pointer}
                                     />
                                 </Typography>
+                                {/* Display place rating */}
                                 <Rating size="small" value={Number(place.rating)} readOnly />
                             </Paper>
                         )}
                     </div>
                 ))}
+                {/* Mapping through weather data */}
                 {weatherData?.list?.map((data, i) => (
                     <div key={i} lat={data.coord.lat} lng={data.coord.lon}>
+                        {/* Display weather icon */}
                         <img style={{ height: "300px" }} src={`https://openweathermap.org/img/wn/${data.weather[0].icon}.png`} alt="Weather Widget" />
                         {console.log(data.weather[0].icon)}
                     </div>
@@ -60,4 +72,6 @@ const Map = ({ setCoordinates, setBounds, coordinates, places, setChildClick, we
         </div>
     );
 };
+
+// Exporting the Map component
 export default Map;
